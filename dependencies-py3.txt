@@ -1,0 +1,9 @@
+# LIST YOUR PYTHON3 PACKAGES HERE
+# NOTE: only place non-Duckietown libraries here; pin versions only if necessary
+
+# Package: ros_http_api
+Flask==3.0.0
+Flask-Cors==4.0.0
+
+# this is for DTROS and buff_size input
+humanfriendly==10.0
