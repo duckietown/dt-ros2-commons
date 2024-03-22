@@ -16,7 +16,7 @@ dt-launchfile-init
 dt-set-module-healthy
 
 # launching app
-dt-exec roslaunch ros_commons default.launch veh:="$VEHICLE_NAME"
+dt-exec ros2 launch ros2_commons default.launch veh:="$VEHICLE_NAME"
 
 
 # ----------------------------------------------------------------------------

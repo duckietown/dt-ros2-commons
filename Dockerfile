@@ -5,8 +5,8 @@ ARG PROJECT_MAINTAINER
 # pick an icon from: https://fontawesome.com/v4.7.0/icons/
 ARG PROJECT_ICON="cube"
 ARG PROJECT_FORMAT_VERSION
-# ROS
-ARG ROS_DISTRO=noetic
+# ROS2
+ARG ROS2_DISTRO=humble
 
 # ==================================================>
 # ==> Do not change the code below this line
@@ -39,12 +39,12 @@ ARG TARGETPLATFORM
 ARG TARGETOS
 ARG TARGETARCH
 ARG TARGETVARIANT
-# - ROS
-ARG ROS_DISTRO
+# - ROS2
+ARG ROS2_DISTRO
 
-# ROS info
-ENV ROS_DISTRO="${ROS_DISTRO}" \
-    CATKIN_WS_DIR="/code"
+# ROS2 info
+ENV ROS2_DISTRO="${ROS2_DISTRO}" \
+    COLCON_WS="/code"
 
 # check build arguments
 RUN dt-args-check \
@@ -74,11 +74,17 @@ ENV DT_PROJECT_NAME="${PROJECT_NAME}" \
     DT_PROJECT_LAUNCHERS_PATH="${PROJECT_LAUNCHERS_PATH}" \
     DT_LAUNCHER="${LAUNCHER}"
 
-# setup ROS sources
-RUN apt-key adv \
-    --keyserver hkp://keyserver.ubuntu.com:80 \
-    --recv-keys F42ED6FBAB17C654 \
-    && echo "deb http://packages.ros.org/ros/ubuntu ${OS_DISTRO} main" >> /etc/apt/sources.list.d/ros.list
+# setup ROS2 sources
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg2 \
+    lsb-release \
+    && curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add - \
+    && sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2.list'
+
+# remove catkin from base image (installed by ament)
+RUN apt-get remove -y \
+    python3-catkin-pkg
 
 # install apt dependencies
 COPY ./dependencies-apt.txt "${PROJECT_PATH}/"
@@ -94,9 +100,8 @@ RUN dt-pip3-install "${PROJECT_PATH}/dependencies-py3.*"
 COPY ./packages "${PROJECT_PATH}/packages"
 
 # build packages
-RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
-  catkin build \
-    --workspace ${CATKIN_WS_DIR}/
+RUN . /opt/ros/${ROS2_DISTRO}/setup.sh && \
+  dt-colcon-build ${WORKSPACE_DIR}
 
 # install launcher scripts
 COPY ./launchers/. "${PROJECT_LAUNCHERS_PATH}/"
@@ -133,4 +138,8 @@ LABEL \
     org.duckietown.label.base.repository="${BASE_REPOSITORY}" \
     org.duckietown.label.base.tag="${BASE_TAG}"
 # <== Do not change the code above this line
-# <==================================================
+# <================================================== \
+
+ENV PYTHON_VERSION=3.10
+
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTHON_VERSION} 200

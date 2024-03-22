@@ -1,13 +1,4 @@
 # LIST YOUR APT PACKAGES HERE
 
-# commons
-gfortran
-
-# ROS packages
-ros-noetic-rospy
-ros-noetic-robot
-ros-noetic-cv-bridge
-ros-noetic-image-transport
-ros-noetic-image-transport-plugins
-ros-noetic-tf-conversions
-ros-noetic-joy
+# ROS2 packages
+ros-humble-ros-base

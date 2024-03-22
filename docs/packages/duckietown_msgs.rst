@@ -1,10 +1,10 @@
-ROS Package: duckietown_msgs
+ROS2 Package: duckietown_msgs
 ============================
 
 .. contents::
 
 The `duckietown_msgs` package contains all messages that are used for inter-node communication
-via ROS in Duckietown.  Each of the Duckietown messages can be found documented below and live in the `dt-ros-commons/packages/duckietown_msgs` directory.
+via ROS2 in Duckietown.  Each of the Duckietown messages can be found documented below and live in the `dt-ros2-commons/packages/duckietown_msgs` directory.
 
 
 Diagnostics

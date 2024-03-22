@@ -1,4 +1,4 @@
-ROS Package: duckietown_protocols
+ROS2 Package: duckietown_protocols
 =================================
 
 .. contents::
@@ -6,7 +6,7 @@ ROS Package: duckietown_protocols
 The ``duckietown_protocols`` package contains all the protocols that are needed for multi-robot interaction. For example,
 they match a semantic meaning to the different patterns of colors and blinking of LEDs. For the multi-robot system to
 work is important that every robot and every container inside each robot uses the same set of protocols (i.e. same
-version of ``dt-ros-commons``.
+version of ``dt-ros2-commons``.
 
 
 Protocols

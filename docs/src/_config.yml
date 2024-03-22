@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: dt-ros-commons
+title: dt-ros2-commons
 author: The Duckietown Team
 logo: logo.png
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
@@ -23,7 +23,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/duckietown/dt-ros-commons
+  url: https://github.com/duckietown/dt-ros2-commons
   path_to_book: docs/src
 
 # Add GitHub buttons to your book

@@ -23,8 +23,8 @@ fi
 
 # constants
 ROS_SETUP=(
-    "/opt/ros/${ROS_DISTRO}/setup.bash"
-    "${CATKIN_WS_DIR-}/devel/setup.bash"
+    "/opt/ros/${ROS2_DISTRO}/setup.bash"
+    "${COLCON_WS-}/devel/setup.bash"
     "${SOURCE_DIR}/setup.bash"
 )
 

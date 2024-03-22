@@ -1,4 +1,4 @@
-Duckietown Module: dt-ros-commons
+Duckietown Module: dt-ros2-commons
 =================================
 
 .. toctree::
