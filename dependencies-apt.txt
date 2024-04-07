@@ -2,3 +2,4 @@
 
 # ROS2 packages
 ros-humble-ros-base
+ros-humble-rclpy

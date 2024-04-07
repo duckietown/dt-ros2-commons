@@ -16,8 +16,9 @@ dt-launchfile-init
 dt-set-module-healthy
 
 # launching app
-dt-exec ros2 launch ros2_commons default.launch veh:="$VEHICLE_NAME"
+# dt-exec echo "This is an empty launch script. Update it to launch your application."
 
+dt-exec python3 -m "my_package.my_script"
 
 # ----------------------------------------------------------------------------
 # YOUR CODE ABOVE THIS LINE
