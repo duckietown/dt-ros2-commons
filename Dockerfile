@@ -74,6 +74,9 @@ ENV DT_PROJECT_NAME="${PROJECT_NAME}" \
     DT_PROJECT_LAUNCHERS_PATH="${PROJECT_LAUNCHERS_PATH}" \
     DT_LAUNCHER="${LAUNCHER}"
 
+# copy binaries
+COPY ./assets/bin/. /usr/local/bin/
+
 # setup ROS2 sources
 RUN apt-get update && apt-get install -y \
     curl \
@@ -83,6 +86,7 @@ RUN apt-get update && apt-get install -y \
     && sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2.list'
 
 # remove catkin from base image (installed by ament)
+# TODO: this might not be needed anymore
 RUN apt-get remove -y \
     python3-catkin-pkg
 
@@ -139,7 +143,3 @@ LABEL \
     org.duckietown.label.base.tag="${BASE_TAG}"
 # <== Do not change the code above this line
 # <================================================== \
-
-ENV PYTHON_VERSION=3.10
-
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTHON_VERSION} 200

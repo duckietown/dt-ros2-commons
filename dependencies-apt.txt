@@ -1,5 +1,11 @@
 # LIST YOUR APT PACKAGES HERE
 
+# colcon/ament packages
+ament-cmake
+ament-lint
+ament-cmake-pytest
+ament-cmake-googletest
+
 # ROS2 packages
 ros-humble-ros-base
 ros-humble-rclpy
