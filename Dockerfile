@@ -141,5 +141,4 @@ LABEL \
 # <================================================== \
 
 ENV PYTHON_VERSION=3.10
-
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTHON_VERSION} 200

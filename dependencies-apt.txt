@@ -3,4 +3,6 @@
 # ROS2 packages
 ros-humble-ros-base
 ros-humble-rclpy
+
+# TODO: cv-bridge is not very efficient, replace it with turbo-jpeg
 ros-humble-cv-bridge
