@@ -6,7 +6,7 @@ ARG PROJECT_MAINTAINER
 ARG PROJECT_ICON="cube"
 ARG PROJECT_FORMAT_VERSION
 # ROS2
-ARG ROS2_DISTRO=humble
+ARG ROS2_DISTRO=rolling
 
 # ==================================================>
 # ==> Do not change the code below this line
