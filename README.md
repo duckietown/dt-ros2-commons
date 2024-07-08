@@ -1,5 +1,8 @@
 # dt-ros2-commons
 
+**NOTE: Support for ROS2 is still under development in Duckietown. This repository is not ready to be used.**
+
+
 ROS2 environment with common ROS2 libraries for Duckietown.
 
 
