@@ -142,3 +142,5 @@ LABEL \
 # <== Do not change the code above this line
 # <================================================== \
 
+# Use Zenoh as RMW implementation
+ENV RMW_IMPLEMENTATION=rmw_zenoh_cpp

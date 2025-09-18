@@ -18,3 +18,5 @@ ros-jazzy-camera-info-manager
 libcamera0.2
 pkg-config
 libcamera-dev
+
+ros-jazzy-rmw-zenoh-cpp
