@@ -8,6 +8,9 @@ Flask-Cors==4.0.0
 # this is for DTROS and buff_size input
 humanfriendly==10.0
 
+# empy 4.x breaks ROS 2 rosidl message generation (em.TransientParseError); pin to the rosidl-compatible release
+empy==3.3.4
+
 # colcon build system
 colcon-common-extensions<=0.3.0
 
