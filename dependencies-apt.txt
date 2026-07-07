@@ -12,6 +12,7 @@ ros-jazzy-rclpy
 
 # TODO: cv-bridge is not very efficient, replace it with turbo-jpeg
 ros-jazzy-cv-bridge
+python3-opencv
 
 # ros-camera build dependencies
 ros-jazzy-camera-info-manager
