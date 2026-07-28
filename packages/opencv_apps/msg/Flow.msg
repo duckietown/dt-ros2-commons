@@ -1,0 +1,2 @@
+opencv_apps/Point2D point
+opencv_apps/Point2D velocity
